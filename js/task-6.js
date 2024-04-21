@@ -9,13 +9,14 @@ function createBoxes(amount, container) {
 
   let size = 30;
 
-  for (let index = 0; index < amount; index++) {
+  for (let i = 0; i < amount; i++) {
     const box = document.createElement('div');
     box.classList.add('box');
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
-    container.appendChild(box);
+
+    container.append(box);
 
     size += 10;
   }

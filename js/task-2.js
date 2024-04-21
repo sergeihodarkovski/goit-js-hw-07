@@ -26,6 +26,7 @@ const images = [
 ];
 
 const galleryList = document.querySelector('.gallery');
+const elementsToAdd = [];
 
 images.forEach(image => {
   const li = document.createElement('li');
@@ -40,5 +41,7 @@ images.forEach(image => {
   img.style.borderRadius = '5px';
 
   li.appendChild(img);
-  galleryList.appendChild(li);
+  elementsToAdd.push(li);
 });
+
+galleryList.append(...elementsToAdd);
