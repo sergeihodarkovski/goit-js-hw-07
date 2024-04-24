@@ -8,6 +8,7 @@ function createBoxes(amount, container) {
   container.innerHTML = '';
 
   let size = 30;
+  const fragment = document.createDocumentFragment();
 
   for (let i = 0; i < amount; i++) {
     const box = document.createElement('div');
@@ -16,10 +17,12 @@ function createBoxes(amount, container) {
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
 
-    container.append(box);
+    fragment.append(box);
 
     size += 10;
   }
+
+  container.append(fragment);
 }
 
 const createButton = document.querySelector('[data-create]');
